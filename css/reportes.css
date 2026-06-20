@@ -1,0 +1,28 @@
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.report-box {
+    border: 1px solid var(--line-gold);
+    border-radius: 16px;
+    padding: 16px;
+    background: #15171a;
+}
+
+.report-box h3 {
+    margin: 0 0 10px;
+    color: var(--gold-2);
+}
+
+.report-box p {
+    margin: 0;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+}

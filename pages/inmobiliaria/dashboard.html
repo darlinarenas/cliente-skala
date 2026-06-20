@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard inmobiliaria</title>
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/inmobiliaria.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar" data-topbar></header>
+        <main class="page">
+            <section class="page-header">
+                <div>
+                    <h1>Dashboard inmobiliaria</h1>
+                    <p>Resumen de propiedades y requerimientos activos.</p>
+                </div>
+            </section>
+            <section class="layout">
+                
+<aside class="sidebar">
+    <a class="sidebar-link" href="dashboard.html">⌂ Dashboard</a>
+    <a class="sidebar-link" href="propiedades.html">▦ Propiedades</a>
+    <a class="sidebar-link" href="requerimientos.html">▱ Requerimientos</a>
+    <a class="sidebar-link" href="chat.html">◉ Chat SKALA</a>
+    <a class="sidebar-link" href="perfil.html">◇ Perfil</a>
+</aside>
+
+                <section>
+                    
+<div class="content-grid" data-inmo-cards></div>
+<div class="panel">
+    <h2 class="panel-title">Mis requerimientos recientes</h2>
+    <div data-inmo-recientes></div>
+</div>
+
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/database.js"></script>
+    <script src="../../js/core/auth.js"></script>
+    <script src="../../js/shared/ui.js"></script>
+    <script src="../../js/shared/layout.js"></script>
+    <script src="../../js/inmobiliaria/dashboard.js"></script>
+</body>
+</html>

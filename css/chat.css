@@ -1,0 +1,67 @@
+.chat-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 16px;
+}
+
+.chat-list,
+.chat-window {
+    min-height: 520px;
+}
+
+.chat-thread {
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.chat-thread.active,
+.chat-thread:hover {
+    border-color: var(--gold);
+    background: var(--gold-dark);
+}
+
+.messages {
+    height: 390px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.message {
+    max-width: 74%;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: #1b1d20;
+    color: #eee;
+}
+
+.message.mine {
+    margin-left: auto;
+    background: #2a2110;
+    border: 1px solid var(--gold);
+}
+
+.message small {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.chat-compose {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+@media (max-width: 800px) {
+    .chat-layout {
+        grid-template-columns: 1fr;
+    }
+}

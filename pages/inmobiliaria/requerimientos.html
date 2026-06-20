@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requerimientos</title>
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/inmobiliaria.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar" data-topbar></header>
+        <main class="page">
+            <section class="page-header">
+                <div>
+                    <h1>Requerimientos</h1>
+                    <p>Crea, edita, elimina y adjunta fotografías del problema.</p>
+                </div>
+            </section>
+            <section class="layout">
+                
+<aside class="sidebar">
+    <a class="sidebar-link" href="dashboard.html">⌂ Dashboard</a>
+    <a class="sidebar-link" href="propiedades.html">▦ Propiedades</a>
+    <a class="sidebar-link" href="requerimientos.html">▱ Requerimientos</a>
+    <a class="sidebar-link" href="chat.html">◉ Chat SKALA</a>
+    <a class="sidebar-link" href="perfil.html">◇ Perfil</a>
+</aside>
+
+                <section>
+                    
+<div class="panel">
+    <h2 class="panel-title">Nuevo requerimiento</h2>
+    <form class="form-grid" id="requirementForm">
+        <input type="hidden" name="id">
+        <div class="field"><label>Propiedad</label><select name="propertyId" required data-property-options></select></div>
+        <div class="field"><label>Rubro</label><select name="category"><option>Plomería</option><option>Electricidad</option><option>Humedad</option><option>HVAC</option><option>Pintura</option><option>Otro</option></select></div>
+        <div class="field"><label>Prioridad</label><select name="priority"><option>Normal</option><option>Alta</option><option>Urgente</option></select></div>
+        <div class="field"><label>Fotos del problema</label><input type="file" name="photos" accept="image/*" multiple></div>
+        <div class="field form-full"><label>Descripción</label><textarea name="description" required></textarea></div>
+        <button class="btn gold">Guardar requerimiento</button>
+    </form>
+</div>
+<div class="panel"><h2 class="panel-title">Mis requerimientos</h2><div data-requirements-list></div></div>
+
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/database.js"></script>
+    <script src="../../js/core/auth.js"></script>
+    <script src="../../js/shared/ui.js"></script>
+    <script src="../../js/shared/layout.js"></script>
+    <script src="../../js/inmobiliaria/requerimientos.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro SKALA</title>
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+    <main class="auth-page">
+        <section class="auth-card">
+            <div class="auth-hero">
+                <img src="../assets/logo/skala-logo-transparent.png" alt="SKALA Home Services">
+                <h1>Registro</h1>
+                <p>Tu cuenta quedará pendiente hasta ser aprobada por el administrador SKALA.</p>
+            </div>
+            <form class="auth-form" id="registerForm">
+                <h2>Crear cuenta</h2>
+                <div class="form-grid">
+                    <div class="field">
+                        <label>Nombre</label>
+                        <input name="name" required>
+                    </div>
+                    <div class="field">
+                        <label>Correo</label>
+                        <input name="email" type="email" required>
+                    </div>
+                    <div class="field">
+                        <label>Contraseña</label>
+                        <input name="password" type="password" required>
+                    </div>
+                    <div class="field">
+                        <label>Teléfono</label>
+                        <input name="phone">
+                    </div>
+                    <div class="field">
+                        <label>Tipo de cuenta</label>
+                        <select name="role" required>
+                            <option value="inmobiliaria">Inmobiliaria</option>
+                            <option value="tecnico">Técnico</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Empresa / especialidad</label>
+                        <input name="company" placeholder="Ej: Inmobiliaria Norte / Plomería">
+                    </div>
+                </div>
+                <button class="btn gold" type="submit">Enviar registro</button>
+                <a class="btn" href="login.html">Volver al login</a>
+            </form>
+        </section>
+    </main>
+    <script src="../js/core/storage.js"></script>
+    <script src="../js/core/database.js"></script>
+    <script src="../js/core/auth.js"></script>
+    <script src="../js/shared/ui.js"></script>
+    <script src="../js/auth/registro.js"></script>
+</body>
+</html>

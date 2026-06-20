@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat interno</title>
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar" data-topbar></header>
+        <main class="page">
+            <section class="page-header">
+                <div>
+                    <h1>Chat interno</h1>
+                    <p>Comunicación centralizada entre SKALA, inmobiliarias y técnicos.</p>
+                </div>
+            </section>
+            <section class="layout">
+                
+<aside class="sidebar">
+    <a class="sidebar-link" href="dashboard.html">⌂ Dashboard</a>
+    <a class="sidebar-link" href="inmobiliarias.html">▦ Inmobiliarias</a>
+    <a class="sidebar-link" href="tecnicos.html">◈ Técnicos</a>
+    <a class="sidebar-link" href="requerimientos.html">▱ Requerimientos</a>
+    <a class="sidebar-link" href="chat.html">◉ Chat interno</a>
+    <a class="sidebar-link" href="reportes.html">▤ Reportes</a>
+</aside>
+
+                <section>
+                    
+<div class="panel chat-layout">
+    <div class="chat-list" data-chat-threads></div>
+    <div class="chat-window">
+        <div class="messages" data-chat-messages></div>
+        <form class="chat-compose" id="chatForm">
+            <input name="message" placeholder="Escribe un mensaje interno...">
+            <button class="btn gold">Enviar</button>
+        </form>
+    </div>
+</div>
+
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/database.js"></script>
+    <script src="../../js/core/auth.js"></script>
+    <script src="../../js/shared/ui.js"></script>
+    <script src="../../js/shared/layout.js"></script>
+    <script src="../../js/shared/chat.js"></script>
+    <script src="../../js/admin/chat.js"></script>
+</body>
+</html>

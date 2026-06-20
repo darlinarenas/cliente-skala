@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades</title>
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/inmobiliaria.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="topbar" data-topbar></header>
+        <main class="page">
+            <section class="page-header">
+                <div>
+                    <h1>Propiedades</h1>
+                    <p>Crea, edita y elimina propiedades administradas.</p>
+                </div>
+            </section>
+            <section class="layout">
+                
+<aside class="sidebar">
+    <a class="sidebar-link" href="dashboard.html">⌂ Dashboard</a>
+    <a class="sidebar-link" href="propiedades.html">▦ Propiedades</a>
+    <a class="sidebar-link" href="requerimientos.html">▱ Requerimientos</a>
+    <a class="sidebar-link" href="chat.html">◉ Chat SKALA</a>
+    <a class="sidebar-link" href="perfil.html">◇ Perfil</a>
+</aside>
+
+                <section>
+                    
+<div class="panel">
+    <h2 class="panel-title">Nueva propiedad</h2>
+    <form class="form-grid" id="propertyForm">
+        <input type="hidden" name="id">
+        <div class="field"><label>Dirección</label><input name="address" required></div>
+        <div class="field"><label>Comuna</label><input name="city" required></div>
+        <div class="field"><label>Encargado</label><input name="manager" required></div>
+        <div class="field"><label>Teléfono encargado</label><input name="phone"></div>
+        <div class="field form-full"><label>Detalle</label><textarea name="notes"></textarea></div>
+        <button class="btn gold">Guardar propiedad</button>
+    </form>
+</div>
+<div class="panel"><h2 class="panel-title">Listado</h2><div data-properties-list></div></div>
+
+                </section>
+            </section>
+        </main>
+    </div>
+
+    <script src="../../js/core/storage.js"></script>
+    <script src="../../js/core/database.js"></script>
+    <script src="../../js/core/auth.js"></script>
+    <script src="../../js/shared/ui.js"></script>
+    <script src="../../js/shared/layout.js"></script>
+    <script src="../../js/inmobiliaria/propiedades.js"></script>
+</body>
+</html>
