@@ -1,0 +1,403 @@
+# SKALA HOME SERVICES PRO PREMIUM
+
+## MASTER DEL PROYECTO
+
+### CONCEPTO
+
+SKALA Home Services es una plataforma SaaS para gestión de mantenimiento inmobiliario.
+
+Conecta:
+
+* Inmobiliarias
+* Administradores de edificios
+* Técnicos
+* Equipo interno SKALA
+
+Todo centralizado desde una única plataforma.
+
+---
+
+# ESTADO ACTUAL
+
+## Arquitectura
+
+Proyecto modular.
+
+Separado por:
+
+* HTML
+* CSS
+* JavaScript
+* Assets
+
+Preparado para:
+
+* LocalStorage (fase actual)
+* PostgreSQL (fase siguiente)
+* Backend Node.js
+* API REST
+
+---
+
+# MÓDULOS ACTUALES
+
+## Login
+
+Funciones:
+
+* Inicio de sesión
+* Registro
+* Roles
+
+Roles:
+
+* Administrador
+* Inmobiliaria
+* Técnico
+
+---
+
+## Panel Administrador
+
+Funciones:
+
+* Dashboard
+* Aprobar inmobiliarias
+* Aprobar técnicos
+* Visualizar requerimientos
+* Reportes básicos
+
+---
+
+## Panel Inmobiliaria
+
+Funciones:
+
+* Crear requerimientos
+* Editar requerimientos
+* Eliminar requerimientos
+* Ver historial
+
+---
+
+## Panel Técnico
+
+Funciones:
+
+* Ver trabajos asignados
+* Actualizar estado
+* Editar información propia
+* Eliminar registros propios
+
+---
+
+## Chat Interno
+
+Estado actual:
+
+* Funcional básico
+
+Problema actual:
+
+* Todas las conversaciones están mezcladas.
+
+Debe rediseñarse.
+
+---
+
+# REQUERIMIENTOS
+
+Cada requerimiento debe contener:
+
+* ID único
+* Inmobiliaria
+* Propiedad
+* Dirección
+* Categoría
+* Descripción
+* Prioridad
+* Fecha creación
+* Estado
+* Técnico asignado
+* Evidencias fotográficas
+
+Estados:
+
+* Pendiente
+* En revisión
+* Asignado
+* En ejecución
+* Finalizado
+* Cerrado
+
+---
+
+# SISTEMA DE FOTOGRAFÍAS
+
+Actualmente:
+
+* LocalStorage
+
+Futuro:
+
+* Supabase Storage
+
+Cada requerimiento debe admitir:
+
+* Foto principal
+* Fotos adicionales
+* Evidencias antes/después
+
+---
+
+# STARTUP PLUS (CORTO PLAZO)
+
+## 1. PROPIEDADES
+
+Nueva sección.
+
+La inmobiliaria debe poder:
+
+* Crear propiedad
+* Editar propiedad
+* Eliminar propiedad
+
+Datos:
+
+* Nombre
+* Dirección
+* Ciudad
+* Cantidad de unidades
+* Encargado
+* Observaciones
+
+---
+
+## 2. ASIGNACIÓN DE TÉCNICOS
+
+Administrador:
+
+* Asigna técnico
+
+Técnico:
+
+* Acepta trabajo
+* Rechaza trabajo
+
+---
+
+## 3. EVIDENCIAS
+
+El técnico debe subir:
+
+* Foto antes
+* Foto durante
+* Foto después
+
+---
+
+## 4. REPORTES PDF
+
+Generar:
+
+* Reporte de trabajo
+* Reporte mensual
+* Historial por propiedad
+
+---
+
+## 5. NOTIFICACIONES
+
+Internas.
+
+Eventos:
+
+* Nuevo requerimiento
+* Trabajo asignado
+* Trabajo finalizado
+* Mensaje nuevo
+
+---
+
+## 6. DASHBOARD PREMIUM
+
+KPIs:
+
+* Requerimientos abiertos
+* Requerimientos cerrados
+* Técnicos activos
+* Tiempo promedio resolución
+* Costos mensuales
+
+---
+
+# REDISEÑO DEL CHAT (PRIORIDAD ALTA)
+
+## PROBLEMA
+
+Actualmente existe un único chat.
+
+Esto no sirve para producción.
+
+---
+
+## SOLUCIÓN
+
+Cada conversación debe estar vinculada a un requerimiento.
+
+Ejemplo:
+
+REQ-1001
+Fuga de agua
+Edificio Santa María
+
+Chat independiente.
+
+---
+
+REQ-1002
+Problema eléctrico
+Torre Norte
+
+Chat independiente.
+
+---
+
+# ESTRUCTURA NUEVA CHAT
+
+Conversación
+│
+├── Requerimiento
+├── Inmobiliaria
+├── Técnico
+└── Administrador
+
+---
+
+# VISTA CHAT
+
+Panel izquierdo
+
+* Inmobiliaria
+* Propiedad
+* Requerimiento
+* Estado
+
+Panel derecho
+
+Mensajes.
+
+---
+
+# EJEMPLO
+
+Inmobiliaria Karin
+
+Propiedad:
+Av. Santa Fe 3200
+
+Requerimiento:
+REQ-1458
+
+Chat asociado:
+CHAT-1458
+
+Participantes:
+
+* Karin
+* Técnico Juan Pérez
+* Administrador SKALA
+
+Todo queda dentro de ese proyecto.
+
+Nunca mezclado con otros.
+
+---
+
+# BASE DE DATOS FUTURA
+
+TABLAS
+
+users
+
+* id
+* nombre
+* correo
+* password
+* rol
+* aprobado
+
+inmobiliarias
+
+* id
+* nombre
+* rut
+* dirección
+
+tecnicos
+
+* id
+* especialidad
+
+propiedades
+
+* id
+* inmobiliaria_id
+
+requerimientos
+
+* id
+* propiedad_id
+* tecnico_id
+* estado
+
+mensajes
+
+* id
+* requerimiento_id
+* usuario_id
+* mensaje
+
+adjuntos
+
+* id
+* requerimiento_id
+* url
+
+---
+
+# OBJETIVO MVP
+
+Cerrar el MVP completo.
+
+Tener:
+
+* Login
+* Registro
+* Dashboard
+* Propiedades
+* Requerimientos
+* Técnicos
+* Chat por requerimiento
+* Evidencias
+* Reportes
+
+Todo funcionando con LocalStorage.
+
+Luego migrar a PostgreSQL sin rehacer pantallas.
+
+---
+
+# REGLA DEL PROYECTO
+
+NO ROMPER LO QUE YA FUNCIONA.
+
+Cada modificación:
+
+* Archivo completo
+* Código legible
+* Sin minificar
+* Separado por módulos
+* Estilo Orbit Assistant
+* Diseño Premium oscuro dorado
+* Logo PNG oficial SKALA

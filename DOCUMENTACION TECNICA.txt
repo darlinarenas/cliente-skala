@@ -1,0 +1,581 @@
+====================================================
+SKALA HOME SERVICES
+DOCUMENTACIÓN TÉCNICA DEL PROYECTO
+VERSIÓN ACTUAL
+====================================================
+
+PROYECTO:
+SKALA HOME SERVICES
+
+TIPO:
+Plataforma SaaS para gestión de mantenimiento,
+reparaciones e incidencias inmobiliarias.
+
+OBJETIVO:
+
+Centralizar la comunicación entre:
+
+- Administradores SKALA
+- Inmobiliarias
+- Técnicos
+- Propiedades
+
+permitiendo gestionar requerimientos,
+asignaciones, evidencias y seguimiento de trabajos
+desde una sola plataforma.
+
+====================================================
+ESTADO GENERAL DEL PROYECTO
+====================================================
+
+Estado estimado:
+
+65% - 75% completado
+
+Lo desarrollado actualmente:
+
+✓ Sistema de login
+✓ Sistema de registro
+✓ Roles
+✓ Dashboard Administrador
+✓ Dashboard Inmobiliaria
+✓ Dashboard Técnico
+✓ Gestión de propiedades
+✓ Gestión de requerimientos
+✓ Gestión de técnicos
+✓ Chat interno
+✓ Evidencias
+✓ Reportes
+✓ Estructura PostgreSQL inicial
+
+Pendiente:
+
+□ Backend productivo
+□ API REST
+□ Autenticación JWT
+□ Subida real de imágenes
+□ Chat por requerimiento
+□ Notificaciones
+□ Reportes PDF
+□ Asignación avanzada
+□ Producción SaaS
+
+====================================================
+TECNOLOGÍAS UTILIZADAS
+====================================================
+
+Frontend
+
+- HTML5
+- CSS3
+- JavaScript Vanilla
+
+Base de Datos
+
+- PostgreSQL
+
+Infraestructura futura
+
+- Node.js
+- Express
+- API REST
+- Supabase Storage
+
+====================================================
+ESTRUCTURA DEL PROYECTO
+====================================================
+
+/assets
+/css
+/database
+/js
+/pages
+
+====================================================
+ASSETS
+====================================================
+
+Contiene:
+
+- Logo SKALA
+- Imágenes corporativas
+- Recursos visuales
+
+====================================================
+CSS
+====================================================
+
+Archivos:
+
+admin.css
+auth.css
+chat.css
+global.css
+inmobiliaria.css
+reportes.css
+tecnico.css
+variables.css
+
+Función:
+
+Separar estilos por módulo.
+
+====================================================
+JAVASCRIPT
+====================================================
+
+/js/admin
+
+dashboard.js
+inmobiliarias.js
+requerimientos.js
+reportes.js
+tecnicos.js
+chat.js
+
+Funciones:
+
+- Administración general
+- Gestión de usuarios
+- Gestión de requerimientos
+- Gestión de técnicos
+- Reportes
+- Chat
+
+----------------------------------------------------
+
+/js/inmobiliaria
+
+dashboard.js
+perfil.js
+propiedades.js
+requerimientos.js
+chat.js
+
+Funciones:
+
+- Gestión de propiedades
+- Creación de requerimientos
+- Seguimiento
+- Perfil inmobiliaria
+
+----------------------------------------------------
+
+/js/tecnico
+
+dashboard.js
+trabajos.js
+evidencias.js
+perfil.js
+chat.js
+
+Funciones:
+
+- Trabajos asignados
+- Evidencias
+- Perfil técnico
+
+----------------------------------------------------
+
+/js/core
+
+auth.js
+database.js
+storage.js
+
+Funciones:
+
+- Autenticación
+- Acceso a datos
+- Persistencia local
+
+----------------------------------------------------
+
+/js/shared
+
+chat.js
+layout.js
+ui.js
+
+Funciones:
+
+- Componentes reutilizables
+- Interfaz común
+- Navegación
+
+====================================================
+PANTALLAS DEL SISTEMA
+====================================================
+
+AUTENTICACIÓN
+
+index.html
+login.html
+registro.html
+
+====================================================
+PANEL ADMINISTRADOR
+====================================================
+
+dashboard.html
+
+Funciones:
+
+- KPIs generales
+- Resumen operativo
+
+----------------------------------------------------
+
+inmobiliarias.html
+
+Funciones:
+
+- Aprobar inmobiliarias
+- Revisar solicitudes
+- Administrar clientes
+
+----------------------------------------------------
+
+tecnicos.html
+
+Funciones:
+
+- Aprobar técnicos
+- Revisar especialidades
+- Administrar técnicos
+
+----------------------------------------------------
+
+requerimientos.html
+
+Funciones:
+
+- Ver todos los requerimientos
+- Filtrar
+- Asignar trabajos
+
+----------------------------------------------------
+
+reportes.html
+
+Funciones:
+
+- Estadísticas
+- Indicadores
+
+----------------------------------------------------
+
+chat.html
+
+Funciones:
+
+- Comunicación interna
+
+====================================================
+PANEL INMOBILIARIA
+====================================================
+
+dashboard.html
+
+Resumen general.
+
+----------------------------------------------------
+
+propiedades.html
+
+Gestión de propiedades.
+
+Permite:
+
+- Crear
+- Editar
+- Eliminar
+
+----------------------------------------------------
+
+requerimientos.html
+
+Gestión de incidencias.
+
+Permite:
+
+- Crear requerimiento
+- Editar requerimiento
+- Seguimiento
+
+----------------------------------------------------
+
+perfil.html
+
+Datos de la inmobiliaria.
+
+----------------------------------------------------
+
+chat.html
+
+Comunicación con técnicos y administración.
+
+====================================================
+PANEL TÉCNICO
+====================================================
+
+dashboard.html
+
+Resumen de trabajos.
+
+----------------------------------------------------
+
+trabajos.html
+
+Trabajos asignados.
+
+----------------------------------------------------
+
+evidencias.html
+
+Subida de evidencias.
+
+----------------------------------------------------
+
+perfil.html
+
+Perfil técnico.
+
+----------------------------------------------------
+
+chat.html
+
+Comunicación interna.
+
+====================================================
+BASE DE DATOS ACTUAL
+====================================================
+
+TABLA USERS
+
+Campos:
+
+id
+name
+email
+password_hash
+role
+status
+phone
+company
+specialty
+created_at
+
+Roles:
+
+- admin
+- inmobiliaria
+- tecnico
+
+====================================================
+
+TABLA PROPERTIES
+
+Campos:
+
+id
+owner_id
+address
+city
+manager
+phone
+notes
+created_at
+
+====================================================
+
+TABLA REQUIREMENTS
+
+Campos:
+
+id
+code
+owner_id
+property_id
+technician_id
+category
+priority
+description
+status
+technician_note
+created_at
+
+====================================================
+
+TABLA REQUIREMENT_PHOTOS
+
+Campos:
+
+id
+requirement_id
+file_url
+created_at
+
+====================================================
+
+TABLA EVIDENCES
+
+Campos:
+
+id
+requirement_id
+technician_id
+comment
+photo_url
+created_at
+
+====================================================
+
+TABLA MESSAGES
+
+Campos:
+
+id
+thread_id
+subject
+from_id
+text
+created_at
+
+====================================================
+FLUJO OPERATIVO
+====================================================
+
+1. Inmobiliaria crea propiedad
+
+↓
+
+2. Inmobiliaria crea requerimiento
+
+↓
+
+3. Administrador revisa
+
+↓
+
+4. Administrador asigna técnico
+
+↓
+
+5. Técnico acepta trabajo
+
+↓
+
+6. Técnico ejecuta trabajo
+
+↓
+
+7. Técnico sube evidencias
+
+↓
+
+8. Administrador valida
+
+↓
+
+9. Requerimiento cerrado
+
+====================================================
+PROBLEMAS DETECTADOS
+====================================================
+
+1. CHAT
+
+Actualmente existe un chat genérico.
+
+Debe migrarse a:
+
+1 requerimiento = 1 conversación
+
+Prioridad ALTA.
+
+----------------------------------------------------
+
+2. STORAGE
+
+Actualmente preparado para almacenamiento local.
+
+Debe migrarse a:
+
+Supabase Storage
+
+Prioridad ALTA.
+
+----------------------------------------------------
+
+3. AUTENTICACIÓN
+
+No existe backend productivo.
+
+Falta:
+
+- JWT
+- Refresh Token
+- Permisos reales
+
+Prioridad ALTA.
+
+----------------------------------------------------
+
+4. REPORTES
+
+No existen PDF exportables.
+
+Prioridad MEDIA.
+
+====================================================
+FASE 2 RECOMENDADA
+====================================================
+
+1. Backend Node.js
+
+2. PostgreSQL producción
+
+3. JWT
+
+4. API REST
+
+5. Supabase Storage
+
+6. Chat por requerimiento
+
+7. Notificaciones
+
+8. Reportes PDF
+
+9. Dashboard ejecutivo
+
+10. Métricas SaaS
+
+====================================================
+CONCLUSIÓN
+====================================================
+
+SKALA ya posee la estructura correcta para convertirse
+en una plataforma SaaS inmobiliaria profesional.
+
+La arquitectura está bien separada por roles:
+
+- Administrador
+- Inmobiliaria
+- Técnico
+
+La base de datos inicial ya está diseñada y cubre
+la mayoría de los procesos principales.
+
+El siguiente paso lógico es abandonar LocalStorage,
+conectar PostgreSQL mediante API REST y convertir
+el sistema en una plataforma multiusuario real.
+
+Avance estimado:
+
+70% completado.
+
+Pendiente para MVP comercial:
+
+30%.
